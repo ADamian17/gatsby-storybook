@@ -1,0 +1,35 @@
+@use 'abstracts' as *;
+
+.heading {
+  @include media-query('xs', 'up') {
+    background-color: pink;
+  }
+
+  @include media-query('sm', 'up') {
+    background-color: aqua;
+  }
+
+  @include media-query('md', 'up') {
+    background-color: yellow;
+  }
+
+  @include media-query('lg', 'up') {
+    background-color: green;
+  }
+
+  @include media-query('xl', 'up') {
+    background-color: blue;
+  }
+
+  &.red {
+    color: red;
+  }
+
+  &.blue {
+    color: blue;
+  }
+
+  &.yellow {
+    color: yellow;
+  }
+}

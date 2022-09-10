@@ -1,0 +1,19 @@
+@use './functions' as *;
+
+@mixin media-query($bp, $direction) {
+  @if get-bp($bp) {
+    @if $direction == 'up' {
+      @media (min-width: get-bp($bp)) {
+        @content;
+      }
+    } @else if $direction == 'down' {
+      @media (max-width: get-bp($bp)) {
+        @content;
+      }
+    } @else {
+      @error "Please enter a valid direction -> (up or down)";
+    }
+  } @else {
+    @error "Please enter a valid break-point -> (xs, sm, md, lg, xl)";
+  }
+}

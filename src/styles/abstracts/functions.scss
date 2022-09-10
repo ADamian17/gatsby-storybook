@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "./bp-variables" as *;
+
+@function get-bp($bp) {
+  @return map.get($break-points, $bp);
+}
+
+@function get-value($map, $target) {
+  @return map.get($map, $target);
+}
