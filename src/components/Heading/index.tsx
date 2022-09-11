@@ -2,11 +2,7 @@ import React from 'react';
 
 import styles from './Heading.module.scss';
 
-type HeadingType = {
-  text: string;
-  variant?: 'blue' | 'yellow' | 'red';
-  handleClick?: (e: React.MouseEvent) => void;
-};
+import { HeadingType } from '@types';
 
 const Heading: React.FC<HeadingType> = ({ text, variant }) => {
   const headingVariant = {
