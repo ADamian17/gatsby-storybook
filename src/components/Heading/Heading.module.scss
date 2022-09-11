@@ -1,4 +1,4 @@
-@use 'abstracts' as *;
+@use 'main.scss' as *;
 
 .heading {
   @include media-query('xs', 'up') {
@@ -18,7 +18,7 @@
   }
 
   @include media-query('xl', 'up') {
-    background-color: blue;
+    background-color: initial;
   }
 
   &.red {
