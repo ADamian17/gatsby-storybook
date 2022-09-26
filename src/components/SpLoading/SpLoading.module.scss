@@ -1,0 +1,30 @@
+.loadingSpinnerWrapper {
+  display: grid;
+  width: fit-content;
+  align-items: center;
+  justify-items: center;
+
+  .loadingSpinner {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    height: 100px;
+    width: 100px;
+    animation: spin 900ms linear infinite;
+  }
+
+  .loadingButterfly {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

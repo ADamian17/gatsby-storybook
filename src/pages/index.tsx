@@ -5,11 +5,11 @@ import Heading from '../components/Heading';
 const IndexPage = () => {
   return (
     <main>
-      <Heading text="Home Page" />
+      <Heading text="Never let lorem stop you" />
     </main>
   );
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <title>Never let lorem stop you</title>;

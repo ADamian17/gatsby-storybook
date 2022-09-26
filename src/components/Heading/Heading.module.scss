@@ -1,5 +1,29 @@
 @use 'main.scss' as *;
 
+.spLogo {
+  width: 165px;
+  height: 24px;
+  fill: #1371c8;
+}
+
+.cpoy {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.checkMark {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: red;
+}
+
+.chevronDown {
+  width: 24px;
+  height: 24px;
+}
+
 .heading {
   @include media-query('xs', 'up') {
     background-color: pink;
@@ -31,5 +55,9 @@
 
   &.yellow {
     color: yellow;
+  }
+
+  svg {
+    height: 100px;
   }
 }
