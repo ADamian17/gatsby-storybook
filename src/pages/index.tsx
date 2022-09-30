@@ -1,15 +1,16 @@
-import * as React from 'react';
+import React from 'react';
+
 import type { HeadFC } from 'gatsby';
-import Heading from '../components/Heading';
+import { Heading } from '@components';
 
 const IndexPage = () => {
   return (
     <main>
-      <Heading text="Never let lorem stop you" />
+      <Heading text="Home Page" />
     </main>
   );
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Never let lorem stop you</title>;
+export const Head: HeadFC = () => <title>Home Page</title>;

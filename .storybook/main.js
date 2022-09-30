@@ -13,6 +13,9 @@ const webpackFinal = async (config) => {
     ],
     alias: {
       ...config.resolve.alias,
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@layouts': path.resolve(__dirname, 'src/layouts'),
+      '@services': path.resolve(__dirname, 'src/services'),
       '@types': path.resolve(__dirname, 'src/types'),
     },
   };
