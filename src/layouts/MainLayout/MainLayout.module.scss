@@ -1,3 +1,26 @@
+@use "main" as *;
+
 .mainLayout {
-  background-color: red;
+  @include main-grid-layout;
+
+  @include media-query('sm', 'up') {
+    // @include main-grid-layout(4, 5rem);
+  }
+
+  div {
+    grid-column: center-starts / center-ends;
+    background-color: aqua;
+
+    @include media-query('sm', 'up') {
+      background-color: red;
+    }
+
+    @include media-query('lg', 'up') {
+      background-color: yellow;
+    }
+
+    @include media-query('xl', 'up') {
+      background-color: green;
+    }
+  }
 }

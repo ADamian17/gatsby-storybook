@@ -17,3 +17,35 @@
     @error "Please enter a valid break-point -> (xs, sm, md, lg, xl)";
   }
 }
+
+@mixin template-columns($sizes-gutters: 0, $column-sizes: 6rem) {
+  // grid-template-columns:
+  //   [full-starts] $sizes-gutters [center-starts] repeat(
+  //     auto-fit,
+  //     minmax($column-sizes, 1fr)
+  //   )
+  //   [center-ends] $sizes-gutters [full-ends];
+  grid-template-columns:
+    [full-starts] $sizes-gutters [center-starts] repeat(12, 1fr)
+    [center-ends] $sizes-gutters [full-ends];
+}
+
+@mixin main-grid-layout {
+  column-gap: 2.4rem;
+  display: grid;
+  grid-auto-rows: min-content;
+
+  @include template-columns;
+
+  @include media-query('md', 'up') {
+    @include template-columns(8px);
+  }
+
+  @include media-query('lg', 'up') {
+    @include template-columns(8px, 5.5rem);
+  }
+
+  @include media-query('xl', 'up') {
+    @include template-columns(44px, 9.53rem);
+  }
+}

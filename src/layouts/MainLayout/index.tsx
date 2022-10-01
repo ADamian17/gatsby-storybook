@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import styles from './MainLayout.module.scss';
+import styles from "./MainLayout.module.scss";
 
 type MainLayoutType = {
   children: React.ReactNode;
 };
 
-const MainLayout: React.FC<MainLayoutType> = ({ children }) => {
+export const MainLayout = ({ children }: MainLayoutType) => {
   return <div className={styles.mainLayout}>{children}</div>;
 };
 
