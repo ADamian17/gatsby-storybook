@@ -8,6 +8,6 @@ OUTPUT_DIR="output_temp"
 
 mkdir "$OUTPUT_DIR"
 
-cp -a "storybook-static" OUTPUT_DIR
+cp -a "./storybook-static" OUTPUT_DIR
 
 rm -rf "storybook-static"
