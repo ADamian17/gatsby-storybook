@@ -14,6 +14,8 @@ const Heading: React.FC<HeadingType> = ({ text, variant }) => {
   return (
     <h1 className={`${styles.heading} ${variant && headingVariant[variant]}`}>
       {text}
+      <br />
+      <img width="100" height="100" src={'/images/bg.jpg'} alt="image" />
     </h1>
   );
 };

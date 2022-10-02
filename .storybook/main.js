@@ -44,7 +44,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/preset-scss',
   ],
-  staticDirs: [{ from: '../static', to: 'assets/' }],
+  staticDirs: [{ from: '../static', to: 'static/' }],
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5',

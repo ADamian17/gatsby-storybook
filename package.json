@@ -16,8 +16,7 @@
     "start": "gatsby develop",
     "storybook": "start-storybook -p 6006",
     "test": "jest --watch",
-    "typecheck": "tsc --noEmit",
-    "archive": "mkdir output_temp && npm run build-storybook && cp -a ./storybook-static/* "
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "gatsby": "^4.22.0",
