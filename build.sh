@@ -7,6 +7,7 @@
 OUTPUT_DIR="output_temp"
 TARGET_DIR="storybook-static"
 
-mkdir "$OUTPUT_DIR" && yarn build-storybook
+mkdir "$OUTPUT_DIR"
+yarn build-storybook
 
 cp -a TARGET_DIR OUTPUT_DIR

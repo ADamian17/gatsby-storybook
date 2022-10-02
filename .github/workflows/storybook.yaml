@@ -14,12 +14,6 @@ jobs:
                                # used in the specific "build.sh"
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: "Run build-storybook"
-        run: yarn build-storybook
       - name: creates output
         run:  sh ./build.sh # some command from your repository that creates
       - name: Pushes to another repository
