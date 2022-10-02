@@ -9,13 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex    # "ubuntu" is a more generic container
-                               # using "pandoc/latex" because of dependencies
-                               # used in the specific "build.sh"
     steps:
       - uses: actions/checkout@v2
-      - name: INstall and Build
-        run: yarn install
+      - name: Install and Build
+        run: npm install
+
       # - name: creates output
       #   run:  sh ./build.sh # some command from your repository that creates
       # - name: Pushes to another repository
