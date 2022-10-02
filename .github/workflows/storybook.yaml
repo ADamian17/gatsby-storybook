@@ -14,13 +14,15 @@ jobs:
                                # used in the specific "build.sh"
     steps:
       - uses: actions/checkout@v2
-      - name: creates output
-        run:  sh ./build.sh # some command from your repository that creates
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-        with:
-          source-directory: "output_temp"
-          destination-github-username: "ADamian17"
-          destination-repository-name: 'demo-dir-1'
+      - name: INstall and Build
+        run: yarn install
+      # - name: creates output
+      #   run:  sh ./build.sh # some command from your repository that creates
+      # - name: Pushes to another repository
+      #   uses: cpina/github-action-push-to-another-repository@main
+      #   env:
+      #     SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+      #   with:
+      #     source-directory: "output_temp"
+      #     destination-github-username: "ADamian17"
+      #     destination-repository-name: 'demo-dir-1'
