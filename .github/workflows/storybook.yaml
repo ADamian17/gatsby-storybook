@@ -14,7 +14,8 @@ jobs:
       - name: Install and Build
         run: npm install
       - name: Build Storybook Static
-        run: npm run build-storybook  
+        run: npm run build-storybook
+          print(code.ca)  
       - name: creates output
         run:  sh ./build.sh # some command from your repository that creates
       - name: Pushes to another repository
