@@ -18,16 +18,15 @@
   }
 }
 
-@mixin template-columns($sizes-gutters: 0, $column-sizes: 6rem) {
-  // grid-template-columns:
-  //   [full-starts] $sizes-gutters [center-starts] repeat(
-  //     auto-fit,
-  //     minmax($column-sizes, 1fr)
-  //   )
-  //   [center-ends] $sizes-gutters [full-ends];
+@mixin template-columns($columns-amount: 4, $sizes-column: 0) {
   grid-template-columns:
-    [full-starts] $sizes-gutters [center-starts] repeat(12, 1fr)
-    [center-ends] $sizes-gutters [full-ends];
+    [ full-starts ]
+    $sizes-column
+    [ center-starts ]
+    repeat($columns-amount, minmax(min-content, 7.338rem))
+    [ center-ends ]
+    $sizes-column
+    [ full-ends ];
 }
 
 @mixin main-grid-layout {
@@ -37,15 +36,19 @@
 
   @include template-columns;
 
+  @include media-query('sm', 'up') {
+    @include template-columns(6);
+  }
+
   @include media-query('md', 'up') {
-    @include template-columns(8px);
+    @include template-columns(8, 0.8rem);
   }
 
   @include media-query('lg', 'up') {
-    @include template-columns(8px, 5.5rem);
+    @include template-columns(12, 4.4rem);
   }
 
   @include media-query('xl', 'up') {
-    @include template-columns(44px, 9.53rem);
+    @include template-columns(12, minmax(4.4rem, 1fr));
   }
 }
