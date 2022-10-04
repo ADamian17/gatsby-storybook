@@ -1,0 +1,5 @@
+@use "main" as *;
+
+.mainGridLayout {
+  @include main-grid-layout;
+}
