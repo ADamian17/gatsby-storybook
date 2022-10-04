@@ -35,6 +35,10 @@
 
   @include template-columns;
 
+  @include media-query('sm', 'up') {
+    @include template-columns(6);
+  }
+
   @include media-query('md', 'up') {
     @include template-columns(8, 8px);
   }
