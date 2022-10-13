@@ -1,4 +1,4 @@
-import type { CreateWebpackConfigArgs } from 'gatsby';
+import type { CreateWebpackConfigArgs, CreatePagesArgs } from 'gatsby';
 import path from 'path';
 
 exports.onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {

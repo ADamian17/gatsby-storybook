@@ -5,10 +5,14 @@ import styles from './Button.module.scss';
 type ButtonType = {
   text: string;
   loading?: boolean;
-  variant?: 'primary';
+  variant?: 'primary' | 'secondary';
 };
 
-const Button: React.FC<ButtonType> = ({ text, loading, variant }) => {
+const Button: React.FC<ButtonType> = ({
+  text,
+  loading,
+  variant = 'primary',
+}) => {
   const loadingStyles = loading ? styles.loading : null;
   const btnStyles = `${styles.button} ${variant && styles[variant]}`;
 

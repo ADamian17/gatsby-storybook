@@ -5,8 +5,13 @@
   min-height: 40px;
   padding: 0 24px;
   position: relative;
+  color: #fff;
 
   &.primary {
+    background-color: #0400f4;
+  }
+
+  &.secondary {
     background-color: #f42900;
   }
 
@@ -41,7 +46,6 @@
   //   }
   // }
 
-  &,
   .loading {
     color: transparent;
   }

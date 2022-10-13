@@ -1,1 +1,62 @@
-@import "";
+@use "main" as *;
+
+.mainHero {
+  padding-top: 80px;
+  grid-column: center-starts / center-ends;
+
+  .hero {
+    display: grid;
+    gap: 40px;
+  }
+
+  .heroContent {
+    display: grid;
+    grid-auto-rows: min-content;
+    row-gap: 24px;
+
+    .headline {
+      margin: 0;
+      font-weight: 500;
+      font-size: 36px;
+      // line-height: 70px;
+      color: #707070;
+    }
+
+    .subcopy {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #707070;
+    }
+  }
+
+  .imageHero {
+    // width: 408px;
+    height: 350px;
+    // height: 427px;
+    background-color: #e7f1f9;
+  }
+}
+
+// const imagePlaceHolder = {
+
+// };
+
+// const inputBtn = {
+//   width: '154px',
+//   height: '48px',
+//   background: '#FF7A5C',
+//   boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
+//   borderRadius: '4px',
+//   color: '#fff',
+// };
+
+// const input = {
+//   width: '331px',
+//   height: '48px',
+//   boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
+//   borderRadius: '4px',
+//   border: '1px solid #333333',
+//   padding: '16px',
+//   marginRight: '16px',
+// };
