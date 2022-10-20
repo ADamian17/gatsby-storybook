@@ -11,12 +11,12 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    // {
-    //   resolve: 'gatsby-source-wordpress',
-    //   options: {
-    //     url: 'http://gatsbystorybook.local/graphql',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        url: 'http://wpdemo.local/graphql',
+      },
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -38,7 +38,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: path.resolve(__dirname, `src`, `images`),
       },
       __key: 'images',
     },

@@ -7,7 +7,8 @@ const PageElementWrapper: GatsbyBrowser['wrapPageElement'] = ({
 }) => {
   console.log({ props });
 
-  return <div {...props}> {true ? <p>...loading</p> : element}</div>;
+  // return <div {...props}> {true ? <p>...loading</p> : element}</div>;
+  return <div {...props}> {element}</div>;
 };
 
 export default PageElementWrapper;
