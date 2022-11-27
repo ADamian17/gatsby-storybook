@@ -1,0 +1,38 @@
+@use "./animations.scss";
+
+%spinner-base {
+  animation: spin 1.4s infinite linear;
+  border-radius: 50%;
+  font-size: 10px;
+  height: 24px;
+  width: 24px;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  background-color: #fff;
+  background: linear-gradient(to right, #fff 10%, #e0e0e000 42%);
+
+  &::after,
+  &::before {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #fff;
+  }
+
+  &::after {
+    border-radius: 50%;
+    content: '';
+    height: 80%;
+    width: 80%;
+    z-index: 1;
+  }
+
+  &::before {
+    border-radius: 100% 0 0 0;
+    content: '';
+    height: 50%;
+    width: 50%;
+    transform: translate(-6px, -6px);
+  }
+}

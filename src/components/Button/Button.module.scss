@@ -1,0 +1,51 @@
+@use "main" as *;
+
+.btn {
+  align-items: center;
+  background-color: #9a9a9a;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgb(51 51 51 / 8%);
+  color: #fff;
+  cursor: pointer;
+  display: inline-grid;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 48px;
+  min-height: 35px;
+  outline: 0;
+  padding: 0 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.24s ease-in-out;
+
+  &.loading {
+    color: transparent;
+
+    .btn__text svg {
+      display: none;
+    }
+  }
+
+  .btn__text,
+  .btn__spinner {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .btn__text {
+    &.withArrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  .btn__spinner {
+    @extend %spinner-base;
+  }
+}

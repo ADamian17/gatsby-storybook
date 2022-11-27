@@ -1,14 +1,19 @@
 import React from 'react';
-import type { GatsbyBrowser } from 'gatsby';
+import { GatsbyBrowser, Link } from 'gatsby';
+import { SpMainCtxWrapper } from '@containers';
+import { MainNavbar } from '@layouts';
 
 const PageElementWrapper: GatsbyBrowser['wrapPageElement'] = ({
   element,
   props,
 }) => {
-  console.log({ props });
+  return (
+    <SpMainCtxWrapper {...props}>
+      <MainNavbar />
 
-  // return <div {...props}> {true ? <p>...loading</p> : element}</div>;
-  return <div {...props}> {element}</div>;
+      {element}
+    </SpMainCtxWrapper>
+  )
 };
 
 export default PageElementWrapper;
