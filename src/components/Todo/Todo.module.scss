@@ -1,0 +1,43 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #d7d7d7;
+  padding: 1rem;
+  width: fit-content;
+  min-width: 16rem;
+  color: #333;
+  font-size: 1.4rem;
+  border-radius: 4px;
+
+  &.completed .todoLabel {
+    text-decoration: line-through;
+  }
+
+  .removeBtn {
+    color: #ff0000;
+  }
+
+  .completeBtn {
+    color: #008000;
+
+    &[disabled] {
+      pointer-events: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .removeBtn,
+  .completeBtn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

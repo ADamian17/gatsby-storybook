@@ -19,3 +19,9 @@ export type SpCtxWrapperType = {
 };
 
 export type SpActionFC = <T = any>(payload?: T) => ActionType;
+
+export type TodoType = {
+  id: string;
+  todoLabel: string;
+  completed: false;
+};

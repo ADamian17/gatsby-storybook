@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import { useDispatch, useSpState } from '@hooks';
 import { userActions } from '@sp-state';
 
+import styles from "./MainNavbar.module.scss";
+
 const MainNavbar = () => {
   const user = useSpState((state) => state.user)
   const dispatch = useDispatch();
@@ -17,11 +19,12 @@ const MainNavbar = () => {
   }
 
   return (
-    <header>
+    <header className={styles.mainNavbar}>
       <Link to="/">home</Link>
 
-      <nav>
-        <Link to="/counter-reducer/">counter-reducer</Link>
+      <nav className={styles.navBar}>
+        <Link to="/counter-reducer/">Counter Page</Link>
+        <Link to="/todos-reducer/">Todos Page</Link>
 
         <button onClick={handleClick}>{btnTxt}</button>
       </nav>

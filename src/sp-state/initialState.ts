@@ -5,4 +5,5 @@ export const INITIAL_STATE: SpStateType = {
     count: 0,
   },
   user: null,
+  todos: new Map(),
 };

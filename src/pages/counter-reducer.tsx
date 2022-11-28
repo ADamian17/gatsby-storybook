@@ -6,7 +6,7 @@ import { Count, Counter } from '@components';
 const CounterReducerPage = () => {
   return (
     <main>
-      <h1>Counter Reducer</h1>
+      <h1>Counter Reducer Page</h1>
 
       <Count />
       <Counter />
@@ -16,4 +16,4 @@ const CounterReducerPage = () => {
 
 export default CounterReducerPage;
 
-export const Head: HeadFC = () => <title>Counter Reducer</title>;
+export const Head: HeadFC = () => <title>Counter Reducer Page</title>;

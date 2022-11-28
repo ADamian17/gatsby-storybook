@@ -1,0 +1,14 @@
+.mainNavbar {
+  align-items: center;
+  background-color: #c4c2c2;
+  display: flex;
+  font-size: 16px;
+  height: 5rem;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+
+  .navBar {
+    display: flex;
+    gap: 1rem;
+  }
+}
