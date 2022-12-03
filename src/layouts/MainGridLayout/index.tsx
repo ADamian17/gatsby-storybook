@@ -1,4 +1,5 @@
 import React from "react";
+import MainNavbar from "../MainNavbar";
 
 import styles from "./MainGridLayout.module.scss";
 
@@ -7,7 +8,12 @@ export type MainGridLayoutType = {
 };
 
 const MainGridLayout = ({ children }: MainGridLayoutType) => {
-  return <div className={styles.mainGridLayout}>{children}</div>;
+  return (
+    <>
+      <MainNavbar />
+      <main className={styles.mainGridLayout}>{children}</main>
+    </>
+  )
 };
 
 export default MainGridLayout;

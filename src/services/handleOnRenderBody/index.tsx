@@ -11,6 +11,7 @@ const handleOnRenderBody = ({ setHeadComponents }: RenderBodyArgs) => {
       type="font/woff2"
       crossOrigin="anonymous"
     />,
+    <script src='/scripts/fb.js' />
   ]);
 };
 

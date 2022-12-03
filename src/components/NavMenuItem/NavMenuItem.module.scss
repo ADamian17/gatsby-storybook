@@ -1,0 +1,19 @@
+.navMenuItem {
+  font-size: 2rem;
+
+  &.pricing {
+    height: 30rem;
+  }
+
+  .navMenuItemLabel {
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    FB: () => void;
+  }
+}
+
 export type HeadingType = {
   text: string;
   variant?: 'blue' | 'yellow' | 'red';

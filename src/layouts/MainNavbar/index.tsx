@@ -1,35 +1,40 @@
 import React from 'react'
-import { Link } from 'gatsby';
+import { Link } from 'gatsby'
 
-import { useDispatch, useSpState } from '@hooks';
-import { userActions } from '@sp-state';
+import styles from './MainNavbar.module.scss';
+import SvgDefs from '../../components/SvgDefs';
+import MobileBtn from '../../components/MobileBtn';
+import useMobileNavBtnStore from '../../zustand';
+import NavMenuItem from '../../components/NavMenuItem';
 
-import styles from "./MainNavbar.module.scss";
-
-const MainNavbar = () => {
-  const user = useSpState((state) => state.user)
-  const dispatch = useDispatch();
-
-  const btnTxt = !user ? "login" : "logout"
-
-  const handleClick = () => {
-    if (!user) return dispatch(userActions.login())
-
-    dispatch(userActions.logout())
-  }
-
+const MainNavbar: React.FC = (props) => {
+  const { showNav } = useMobileNavBtnStore((state) => state)
   return (
     <header className={styles.mainNavbar}>
-      <Link to="/">home</Link>
+      <div className={styles.logoContainer}>
+        <Link to="/">
+          <SvgDefs fileName="defs" svg="sp-logo-blue" className={styles.logo} />
+        </Link>
 
-      <nav className={styles.navBar}>
-        <Link to="/counter-reducer/">Counter Page</Link>
-        <Link to="/todos-reducer/">Todos Page</Link>
+        <MobileBtn />
+      </div>
 
-        <button onClick={handleClick}>{btnTxt}</button>
+      <nav className={`${styles.navMenuItems} ${showNav && styles.expand}`}>
+        <ul className={styles.navMenuItemsList}>
+          <NavMenuItem label='Products' withMenu />
+          <NavMenuItem label='Features' withMenu />
+          <NavMenuItem label='Professions' withMenu />
+          <NavMenuItem label='Resources' withMenu />
+          <NavMenuItem label='Pricing' />
+
+          <div className={styles.navCtasWrapper}>
+            <li className={styles.navMenuItem}>Sign in</li>
+            <li className={styles.navMenuItem}>Start for free</li>
+          </div>
+        </ul>
       </nav>
     </header>
   )
 }
 
-export default MainNavbar;
+export default MainNavbar

@@ -16,18 +16,29 @@ type SvgType =
   | 'sp-logo-blue'
   | 'sp-logo-butterfly'
   | 'sp-logo-white'
-  | 'loading-circle';
+  | 'loading-circle'
+  | 'icon-arrow-down'
+  | 'icon-arrow-left'
+  | 'icon-arrow-up'
+  | 'icon-check'
+  | 'icon-comment'
+  | 'icon-edit-feedback'
+  | 'mob-icon-close'
+  | 'mob-icon-open'
+  | "chevron-down"
+  | "chevron-up";
 
 type SvgDefsType = {
-  svg: SvgType;
   className?: string;
+  fileName: "icons-def" | "defs"
+  svg: SvgType;
   [key: string]: any;
 };
 
-const SvgDefs = ({ svg, className, ...rest }: SvgDefsType) => {
+const SvgDefs = ({ svg, className, fileName, ...rest }: SvgDefsType) => {
   return (
     <svg className={className} {...rest}>
-      <use xlinkHref={`/icons/defs.svg#${svg}`}></use>
+      <use xlinkHref={`/icons/${fileName}.svg#${svg}`}></use>
     </svg>
   );
 };

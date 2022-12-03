@@ -5,5 +5,5 @@ import { render, screen } from "@testing-library/react";
 import Footer from ".."
 
 it('should render correctly', () => {
- render(Footer);
+  console.log(window.FB);
 });

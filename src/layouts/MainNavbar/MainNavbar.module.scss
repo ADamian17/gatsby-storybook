@@ -1,14 +1,62 @@
 .mainNavbar {
-  align-items: center;
-  background-color: #c4c2c2;
-  display: flex;
-  font-size: 16px;
-  height: 5rem;
-  justify-content: space-between;
+  font-size: 1.6rem;
   padding: 0 2.4rem;
 
-  .navBar {
+  .logoContainer {
+    height: 7.2rem;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    fill: #1371c8;
+    height: 2.4rem;
+    width: 16.5rem;
+  }
+
+  .navMenuItems {
+    background-color: #fff;
+    display: none;
+    height: calc(100vh - 7.2rem);
+    left: 0;
+    padding: 0 2.4rem;
+    position: fixed;
+    top: 7.2rem;
+    width: 100%;
+    z-index: 1;
+    transition: height 0.3s ease-out;
+    overflow-y: scroll;
+
+    .navMenuItemsList {
+      list-style: none;
+      display: grid;
+      height: 100%;
+      row-gap: 1rem;
+      position: relative;
+      grid-auto-rows: min-content;
+    }
+
+    .navCtasWrapper {
+      bottom: 4rem;
+      left: 0;
+      padding: 0 2.4rem;
+      position: fixed;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+
+      .navMenuItem {
+        background-color: #1371c8;
+        padding: 2.2rem;
+        border-radius: 4px;
+      }
+    }
+
+    &.expand {
+      display: initial;
+    }
   }
 }

@@ -28,7 +28,8 @@
     "gatsby-transformer-sharp": "^5.2.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "zustand": "^4.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
