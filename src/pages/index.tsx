@@ -26,12 +26,10 @@ const sliderItems = [
 ];
 
 const IndexPage = () => {
-  console.log(window.FB);
-
   return (
-    <MainGridLayout>
-
-    </MainGridLayout>
+    <div>Home</div>
+    // <MainGridLayout>
+    // </MainGridLayout>
   );
 };
 
