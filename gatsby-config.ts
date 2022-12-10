@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
     // {
     //   resolve: 'gatsby-source-wordpress',
     //   options: {
-    //     url: 'http://wpdemo.local/graphql',
+    //     url: 'https://spgatsby.local/graphql',
     //   },
     // },
     {

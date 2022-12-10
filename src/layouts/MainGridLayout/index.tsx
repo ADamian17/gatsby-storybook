@@ -9,10 +9,10 @@ export type MainGridLayoutType = {
 
 const MainGridLayout = ({ children }: MainGridLayoutType) => {
   return (
-    <>
+    <div className={styles.mainContentWrapper}>
       <MainNavbar />
       <main className={styles.mainGridLayout}>{children}</main>
-    </>
+    </div>
   )
 };
 

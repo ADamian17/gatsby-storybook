@@ -1,0 +1,51 @@
+@import "imports/main-imports";
+
+.trialBtn {
+  display: inline-block;
+  margin-left: multiply($primary--spacing, 3);
+  padding-top: $secondary--spacing;
+  vertical-align: middle;
+
+  a {
+    line-height: multiply($primary--spacing, 5);
+    padding: 0 multiply($primary--spacing, 1.5);
+    text-decoration: none;
+
+    div {
+      background-color: $primary--red;
+      border-radius: multiply($primary--spacing, 0.5);
+      color: $primary--white !important;
+      line-height: multiply($primary--spacing, 5);
+      margin-left: multiply($primary--spacing, 3);
+      padding: 0 multiply($primary--spacing, 1.5);
+      padding-top: $secondary--spacing;
+      transition: box-shadow 0.24s ease-in-out !important;
+
+      &:hover {
+        opacity: 1 !important;
+        color: $primary--white !important;
+        box-shadow: 0 multiply($secondary--spacing, 2)
+          multiply($primary--spacing, 1.5) rgba($grey--dark, 0.16);
+      }
+    }
+
+    &:active {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    &:hover {
+      cursor: pointer !important;
+      opacity: 1 !important;
+      color: $primary--white !important;
+    }
+  }
+
+  @media (min-width: #{1024}px) and (max-width: #{1094}px) {
+    display: none !important;
+  }
+
+  @include mq-md {
+    display: none !important;
+  }
+}

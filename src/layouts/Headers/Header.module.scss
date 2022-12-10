@@ -1,0 +1,144 @@
+@import "../../assets/global-styles/imports/main-imports";
+
+.header {
+  background: $primary--white;
+  padding: 24px 0;
+  position: relative;
+  z-index: 10;
+
+  @include mq-md-up {
+    padding: multiply($primary--spacing, 2) 0;
+  }
+}
+
+.transparentBg {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+
+  div {
+    nav {
+      button {
+        background: transparent;
+        color: $grey--dark;
+      }
+    }
+  }
+}
+
+.headerFlexContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: multiply($primary--spacing, 180);
+  padding-left: multiply($primary--spacing, 3);
+  padding-right: multiply($primary--spacing, 3);
+
+  .pollenLogo {
+    opacity: 1;
+
+    &:active {
+      opacity: 0.64;
+    }
+  }
+
+  @include mq-max-up {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.pollenHeader {
+  border-bottom: 1px solid $grey--weak;
+
+  li {
+    a {
+      color: $primary--black;
+
+      &:hover {
+        color: $primary--black  !important;
+        cursor: pointer !important;
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      a {
+        display: inline-flex;
+
+        &:hover {
+          color: $primary--white  !important;
+        }
+      }
+    }
+  }
+
+  .pollenLogo {
+    line-height: 0;
+  }
+}
+
+.sticky-fade-in {
+  position: fixed;
+  width: 100%;
+  -webkit-animation: fadeInSticky 0.32s ease-in-out;
+  -o-animation: fadeInSticky 0.32s ease-in-out;
+  animation: fadeInSticky 0.32s ease-in-out;
+  opacity: 1;
+  pointer-events: auto;
+  top: 0;
+  background: #fff !important;
+  box-shadow: 0 8px 24px rgba(51, 51, 51, 0.12);
+
+  &.noBoxShadow {
+    box-shadow: none;
+  }
+}
+
+.sticky-fade-out {
+  position: fixed;
+  width: 100%;
+  webkit-animation: fadeOutSticky 0.32s ease-in-out;
+  -o-animation: fadeOutSticky 0.32s ease-in-out;
+  animation: fadeOutSticky 0.32s ease-in-out;
+  opacity: 0;
+  top: -20%;
+  -webkit-box-shadow: 0 8px 24px rgba(51, 51, 51, 0.12);
+  box-shadow: 0 8px 24px rgba(51, 51, 51, 0.12);
+}
+
+.trialBtn {
+  display: inline-block;
+  font-weight: 500;
+  line-height: multiply($primary--spacing, 5);
+  text-decoration: none;
+  vertical-align: middle;
+
+  div {
+    background-color: #ff7a5c;
+    border-radius: multiply($primary--spacing, 0.5);
+    border-radius: multiply($primary--spacing, 0.5);
+    color: #fff !important;
+    line-height: multiply($primary--spacing, 5);
+    padding: 0 multiply($primary--spacing, 1.5);
+    transition: box-shadow 0.24s ease-in-out !important;
+
+    &:hover {
+      opacity: 1 !important;
+      color: $primary--white  !important;
+      box-shadow: 0 multiply($secondary--spacing, 2) multiply($primary--spacing, 1.5) rgba($grey--dark, 0.16);
+    }
+  }
+
+  &:active {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &:hover {
+    cursor: pointer !important;
+    opacity: 1 !important;
+    color: $primary--white  !important;
+  }
+}

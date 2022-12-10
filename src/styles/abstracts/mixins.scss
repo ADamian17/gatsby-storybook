@@ -50,5 +50,7 @@
   > * {
     max-width: 114.4rem;
     width: 100%;
+
+    grid-column: center-starts / center-ends;
   }
 }

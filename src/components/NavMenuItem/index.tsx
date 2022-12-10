@@ -30,7 +30,7 @@ const NavMenuItem: React.FC<NavMenuItemType> = ({
         {withMenu && <SvgDefs fileName='defs' svg={menuIcon} onClick={handleClick} />}
       </div>
 
-      {
+      {/* {
         withMenu && (
           <>
             {
@@ -47,7 +47,7 @@ const NavMenuItem: React.FC<NavMenuItemType> = ({
             }
           </>
         )
-      }
+      } */}
     </li>
   )
 }

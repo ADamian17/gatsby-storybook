@@ -4,24 +4,20 @@ import SvgDefs from '../SvgDefs'
 
 import styles from "./MobileBtn.module.scss";
 
-const MobileBtn = () => {
-  const [isClose, setIsClose] = useState(false)
-  const { setShowNav } = useMobileNavBtnStore((state) => state)
-  const btnContent = isClose ? (
-    <SvgDefs fileName="defs" svg="mob-icon-close" />
-  ) : (
-    <SvgDefs fileName="defs" svg="mob-icon-open" />
-  )
+type MobileBtnType = {
+  className?: string
+}
+
+const MobileBtn: React.FC<MobileBtnType> = ({ className }) => {
+  const { showNav, setShowNav } = useMobileNavBtnStore((state) => state)
+  const svg = showNav ? "mob-icon-close" : "mob-icon-open"
 
   const handleClick = () => {
-    setIsClose(prev => {
-      setShowNav(!prev)
-      return !prev
-    })
+    setShowNav(!showNav)
   }
   return (
-    <button className={styles.mobBtn} onClick={handleClick}>
-      {btnContent}
+    <button className={`${styles.mobBtn} ${className}`} onClick={handleClick}>
+      <SvgDefs fileName="defs" svg={svg} />
     </button>
   )
 }

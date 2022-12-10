@@ -1,5 +1,10 @@
 @use "main" as *;
 
+.mainContentWrapper {
+  display: grid;
+  grid-template-rows: 7.2rem min-content;
+}
+
 .mainGridLayout {
   @include main-grid-layout;
 }
