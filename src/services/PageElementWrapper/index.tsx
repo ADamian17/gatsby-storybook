@@ -9,8 +9,6 @@ const PageElementWrapper: GatsbyBrowser['wrapPageElement'] = ({
 }) => {
   return (
     <SpMainCtxWrapper {...props}>
-      <MainNavbar />
-
       {element}
     </SpMainCtxWrapper>
   )
