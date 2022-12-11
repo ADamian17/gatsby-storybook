@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 auto;
   }
 
   &.isSticky {
@@ -71,6 +72,19 @@
 
       .navMenuItems {
         @include mob-nav-items;
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 100vh;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .isPricing {
+          margin-bottom: 25rem;
+        }
 
         .ctasWrapper {
           @include mob-nav-items;

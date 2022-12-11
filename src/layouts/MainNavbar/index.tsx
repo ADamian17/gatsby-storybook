@@ -9,10 +9,13 @@ import NavMenuItem from '../../components/NavMenuItem';
 import { usePageOffset, useWindowSize } from '@hooks';
 
 type MainNavbarType = {
+  backgroundColor?: "blue" | "blueDim";
   isHomePage?: boolean
+  isTransparent?: boolean;
+  noSticky?: boolean;
 }
 
-const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage }) => {
+const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {
   const { showNav, resetShowNav } = useMobileNavBtnStore((state) => state)
   const { y: pageOffsetY } = usePageOffset()
   const { width: windowWidth } = useWindowSize()
@@ -20,7 +23,7 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage }) => {
   const isMobile = windowWidth < 768;
 
   useEffect(() => {
-    if (!showNav && pageOffsetY > 200) {
+    if (!noSticky && !showNav && pageOffsetY > 200) {
       setIsSticky(true)
     } else {
       setIsSticky(false)
@@ -47,7 +50,6 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage }) => {
       }
     </>
   )
-  console.log({ isMobile });
 
   return (
     <header className={headerStyles}>
@@ -60,29 +62,91 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage }) => {
       </div>
 
       <nav className={styles.navMenuItems}>
-        <a href={"/#"}>Products</a>
-        <a href={"/#"}>Features</a>
-        <a href={"/#"}>Professions</a>
-        <a href={"/#"}>Resources</a>
-        <a href={"/#"}>Pricing</a>
+        <a href={"/#"}>
+          <div>
+            <h3>Products</h3>
+            <span>icon</span>
+          </div>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </a>
+        <a href={"/#"}>
+          <div>
+            <h3>Features</h3>
+            <span>icon</span>
+          </div>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </a>
+        <a href={"/#"}>
+          <div>
+            <h3>Professions</h3>
+            <span>icon</span>
+          </div>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </a>
+        <a href={"/#"}>
+          <div>
+            <h3>Resources</h3>
+            <span>icon</span>
+          </div>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </a>
+        <a className={styles.isPricing} href={"/#"}>Pricing</a>
         {ctaWrapper}
       </nav>
-
-      {/* 
-      <nav className={`${styles.navMenuItems} ${showNav && styles.expand}`}>
-        <ul className={styles.navMenuItemsList}>
-          <NavMenuItem label='Products' withMenu />
-          <NavMenuItem label='Features' withMenu />
-          <NavMenuItem label='Professions' withMenu />
-          <NavMenuItem label='Resources' withMenu />
-          <NavMenuItem label='Pricing' />
-
-          <div className={styles.navCtasWrapper}>
-            <li className={styles.navMenuItem}>Sign in</li>
-            <li className={styles.navMenuItem}>Start for free</li>
-          </div>
-        </ul>
-      </nav> */}
     </header>
   )
 }
