@@ -1,4 +1,4 @@
-@import "imports/main-imports";
+@import 'imports/main-imports';
 
 .navPrimary {
   display: block;
@@ -6,10 +6,10 @@
 
 .menuPrimaryNavContainer {
   background: $primary--white;
-  box-shadow: 0 multiply($primary--spacing, 2) multiply($primary--spacing, 3) rgba($grey--dark, 0.16);
+  box-shadow: 0 16px 24px rgba($grey--dark, 0.16);
   display: none;
   left: 0;
-  padding-bottom: multiply($primary--spacing, 3);
+  padding-bottom: 24px;
   padding-top: 34px;
   position: absolute;
   top: 74px;
@@ -23,8 +23,7 @@
 
   &:hover ul li a::after {
     @include mq-md-up {
-      background-position: multiply($primary--spacing, -3)
-        multiply($primary--spacing, -3);
+      background-position: -24px -24px;
       transition: color 0.32s ease-in-out, opacity 0.32s ease-in-out;
     }
   }
@@ -74,7 +73,7 @@
     // padding-inline-start: 0;
     padding: 0 24px;
 
-    @include mq-md-up{
+    @include mq-md-up {
       padding: 0;
     }
   }
@@ -101,7 +100,7 @@
 
     &.primaryMenuMobileActiveLabel {
       &::after {
-        background-image: url("../../../../images/icons/chevron-up-white.svg") !important;
+        background-image: url('../../../../images/icons/chevron-up-white.svg') !important;
       }
     }
   }
@@ -161,11 +160,11 @@
         cursor: pointer !important;
       }
     }
-    a[href^="/pricing/"] > div:hover {
+    a[href^='/pricing/'] > div:hover {
       color: $primary--white !important;
     }
 
-    a[href^="/sign-in/"] > div:hover {
+    a[href^='/sign-in/'] > div:hover {
       color: $primary--white !important;
     }
   }
@@ -225,11 +224,11 @@
       }
     }
 
-    a[href^="/pricing/"] > div:hover {
+    a[href^='/pricing/'] > div:hover {
       color: $primary--blue !important;
     }
 
-    a[href^="/sign-in/"] > div:hover {
+    a[href^='/sign-in/'] > div:hover {
       color: $primary--blue !important;
     }
   }
@@ -267,7 +266,7 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0 $tertiary--spacing rgba($primary--blue, 0.16);
+    box-shadow: 0 0 0 3 rgba($primary--blue, 0.16);
   }
 
   &:active {
@@ -280,8 +279,6 @@
 .primaryMenu {
   display: block;
   margin-bottom: 35px;
-  // margin-left: multiply($primary--spacing, 2);
-  // margin-right: multiply($primary--spacing, 2);
   position: relative;
 
   @include mq-md-up {
@@ -326,7 +323,6 @@
 
     @include mq-md-down {
       display: block;
-      // padding: 0 multiply($tertiary--spacing, 4);
     }
 
     &:focus {
@@ -380,11 +376,11 @@
 
     &::after {
       // new mobile version here...
-      background-image: url("../../../../images/icons/chevron-down.svg");
+      background-image: url('../../../../images/icons/chevron-down.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      content: "";
+      content: '';
       display: inline-block;
       height: 12px;
       margin-left: multiply($secondary--spacing, 2);
@@ -408,11 +404,11 @@
       }
 
       @include mq-lg-up {
-        background-image: url("../../../../images/icons/expand-chevron-black-sprite.svg");
+        background-image: url('../../../../images/icons/expand-chevron-black-sprite.svg');
         background-position: 0 0;
         background-repeat: no-repeat;
         background-size: multiply($primary--spacing, 6);
-        content: "";
+        content: '';
         display: block;
         height: multiply($primary--spacing, 3);
         margin-left: multiply($secondary--spacing, 2);
@@ -495,11 +491,11 @@
     position: relative;
 
     &::after {
-      background-image: url("../../../../images/icons/external-link.svg");
+      background-image: url('../../../../images/icons/external-link.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: multiply($primary--spacing, 2);
-      content: "";
+      content: '';
       display: inline-block;
       height: multiply($primary--spacing, 2);
       margin-left: multiply($primary--spacing, 0.5);
@@ -531,11 +527,11 @@
       position: relative;
 
       &::after {
-        background-image: url("../../../../images/icons/external-link.svg");
+        background-image: url('../../../../images/icons/external-link.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: multiply($primary--spacing, 2);
-        content: "";
+        content: '';
         display: inline-block;
         height: multiply($primary--spacing, 2);
         margin-left: multiply($primary--spacing, 0.5);
@@ -549,9 +545,9 @@
     }
 
     &::before {
-      background: url("../../../../images/icons/arrow-header-blue.svg");
+      background: url('../../../../images/icons/arrow-header-blue.svg');
       background-size: multiply($primary--spacing, 2);
-      content: "";
+      content: '';
       height: multiply($primary--spacing, 2);
       opacity: 0;
       position: absolute;
@@ -620,7 +616,7 @@
   &:hover {
     /* this makes the hover area bigger */
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 4rem;
       left: 0;
@@ -663,11 +659,11 @@
 
     &::after {
       // new mobile version here...
-      background-image: url("../../../../images/icons/chevron-down.svg");
+      background-image: url('../../../../images/icons/chevron-down.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      content: "";
+      content: '';
       display: inline-block;
       height: 12px;
       margin-left: multiply($secondary--spacing, 2);
@@ -691,11 +687,11 @@
       }
 
       @include mq-lg-up {
-        background-image: url("../../../../images/icons/expand-chevron-black-sprite.svg");
+        background-image: url('../../../../images/icons/expand-chevron-black-sprite.svg');
         background-position: 0 0;
         background-repeat: no-repeat;
         background-size: multiply($primary--spacing, 6);
-        content: "";
+        content: '';
         display: block;
         height: multiply($primary--spacing, 3);
         margin-left: multiply($secondary--spacing, 2);
@@ -907,7 +903,7 @@
 
             a {
               padding: $primary--spacing multiply($secondary--spacing, 14)
-              $primary--spacing multiply($tertiary--spacing, 4);
+                $primary--spacing multiply($tertiary--spacing, 4);
 
               p.menuItemDescription {
                 max-width: 100%;
@@ -960,7 +956,7 @@
     }
 
     .videoButtonIcon {
-      background: url("../../../../images/icons/play-arrow-large-white.svg");
+      background: url('../../../../images/icons/play-arrow-large-white.svg');
       cursor: pointer;
       height: multiply($primary--spacing, 5);
       width: multiply($primary--spacing, 5);
@@ -1023,14 +1019,7 @@
       width: 100%;
     }
   }
-
-  // .subMenuItem {
-  //   &:nth-of-type(odd) {
-  //     padding-right: $primary--spacing;
-  //   }
-  // }
-
-  .subColSpecialties {
+  ß .subColSpecialties {
     cursor: default;
 
     > a:first-child {
@@ -1108,7 +1097,7 @@
   /* this makes the hover area bigger  */
   &:hover {
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 4rem;
       left: 0;
@@ -1147,11 +1136,11 @@
 
     /* Features menu */
     &::after {
-      background-image: url("../../../../images/icons/expand-chevron-white-sprite.svg");
+      background-image: url('../../../../images/icons/expand-chevron-white-sprite.svg');
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: multiply($primary--spacing, 6);
-      content: "";
+      content: '';
       display: inline-block;
       height: multiply($primary--spacing, 3);
       margin-left: multiply($secondary--spacing, 2);
@@ -1386,7 +1375,7 @@
     }
 
     .videoButtonIcon {
-      background: url("../../../../images/icons/play-arrow-large-white.svg");
+      background: url('../../../../images/icons/play-arrow-large-white.svg');
       cursor: pointer;
       height: multiply($primary--spacing, 5);
       width: multiply($primary--spacing, 5);
@@ -1400,12 +1389,6 @@
       width: 100%;
     }
   }
-
-  // .subMenuItem {
-  //   &:nth-of-type(odd) {
-  //     padding-right: $primary--spacing;
-  //   }
-  // }
 }
 
 .menuItemDescription {
@@ -1455,7 +1438,7 @@
   color: $primary--white !important;
 
   &.hamburger {
-    background-image: url("../../../../images/icons/menu-hamburger-white.svg") !important;
+    background-image: url('../../../../images/icons/menu-hamburger-white.svg') !important;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1463,7 +1446,7 @@
     width: 33px;
 
     &.hamburgerActive {
-      background-image: url("../../../../images/icons/menu-close-white.svg") !important;
+      background-image: url('../../../../images/icons/menu-close-white.svg') !important;
     }
   }
 
@@ -1567,13 +1550,13 @@
 .primaryMenuMobileActiveLabel {
   &::after {
     @include mq-md-down {
-      background-image: url("../../../../images/icons/chevron-up.svg") !important;
+      background-image: url('../../../../images/icons/chevron-up.svg') !important;
     }
   }
 }
 
 .hamburger {
-  background-image: url("../../../../images/icons/menu-hamburger.svg");
+  background-image: url('../../../../images/icons/menu-hamburger.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1581,6 +1564,6 @@
   width: 33px;
 
   &.hamburgerActive {
-    background-image: url("../../../../images/icons/menu-close.svg");
+    background-image: url('../../../../images/icons/menu-close.svg');
   }
 }

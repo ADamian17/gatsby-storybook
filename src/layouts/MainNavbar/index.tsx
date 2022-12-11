@@ -5,8 +5,9 @@ import styles from './MainNavbar.module.scss';
 import SvgDefs from '../../components/SvgDefs';
 import MobileBtn from '../../components/MobileBtn';
 import useMobileNavBtnStore from '../../zustand';
-import NavMenuItem from '../../components/NavMenuItem';
+import NavMenuItem from './NavMenuItem';
 import { usePageOffset, useWindowSize } from '@hooks';
+import CtasWrapper from './CtasWrapper';
 
 type MainNavbarType = {
   backgroundColor?: "blue" | "blueDim";
@@ -36,20 +37,7 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {
 
 
   const headerStyles = `${styles.mainNavbar} ${isSticky && styles.isSticky} ${showNav && styles.isOpen}`
-  const showCta = !isHomePage && isSticky;
-  const ctaWrapper = isMobile ? (
-    <div className={styles.ctasWrapper}>
-      <a href={"/#"} className={styles.cta}>Sign in</a>
-      <a href={"/#"} className={styles.cta}>Try it free</a>
-    </div>
-  ) : (
-    <>
-      <a href={"/#"}>Sign in</a>
-      {
-        showCta && <a href={"/#"}>Try it free</a>
-      }
-    </>
-  )
+  const withCta = !isHomePage && isSticky;
 
   return (
     <header className={headerStyles}>
@@ -62,90 +50,13 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {
       </div>
 
       <nav className={styles.navMenuItems}>
-        <a href={"/#"}>
-          <div>
-            <h3>Products</h3>
-            <span>icon</span>
-          </div>
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </a>
-        <a href={"/#"}>
-          <div>
-            <h3>Features</h3>
-            <span>icon</span>
-          </div>
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </a>
-        <a href={"/#"}>
-          <div>
-            <h3>Professions</h3>
-            <span>icon</span>
-          </div>
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </a>
-        <a href={"/#"}>
-          <div>
-            <h3>Resources</h3>
-            <span>icon</span>
-          </div>
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </a>
-        <a className={styles.isPricing} href={"/#"}>Pricing</a>
-        {ctaWrapper}
+        <NavMenuItem label='Products' />
+        <NavMenuItem label='Features' />
+        <NavMenuItem label='Professions' />
+        <NavMenuItem label='Resources' />
+        <NavMenuItem label='Pricing' />
+
+        <CtasWrapper isMobile={isMobile} withCta={withCta} />
       </nav>
     </header>
   )

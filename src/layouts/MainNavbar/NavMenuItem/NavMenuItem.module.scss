@@ -1,0 +1,7 @@
+@use "main" as *;
+
+.navMenuItem {
+  @include media-query('md', 'up') {
+    background-color: red;
+  }
+}
