@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
-import styles from './MainNavbar.module.scss';
 import SvgDefs from '../../components/SvgDefs';
 import MobileBtn from '../../components/MobileBtn';
 import useMobileNavBtnStore from '../../zustand';
 import NavMenuItem from './NavMenuItem';
 import { usePageOffset, useWindowSize } from '@hooks';
 import CtasWrapper from './CtasWrapper';
+
+import styles from './MainNavbar.module.scss';
 
 type MainNavbarType = {
   backgroundColor?: "blue" | "blueDim";
@@ -50,13 +51,16 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {
       </div>
 
       <nav className={styles.navMenuItems}>
-        <NavMenuItem label='Products' />
-        <NavMenuItem label='Features' />
-        <NavMenuItem label='Professions' />
-        <NavMenuItem label='Resources' />
-        <NavMenuItem label='Pricing' />
+        <NavMenuItem label='Products' withMenu />
+        <NavMenuItem label='Features' withMenu />
+        <NavMenuItem label='Professions' withMenu />
+        <NavMenuItem label='Resources' withMenu />
+        <NavMenuItem label='Pricing' isPricing />
 
-        <CtasWrapper isMobile={isMobile} withCta={withCta} />
+        <CtasWrapper
+          isMobile={isMobile}
+          withCta={withCta}
+          className={styles.ctasWrapper} />
       </nav>
     </header>
   )

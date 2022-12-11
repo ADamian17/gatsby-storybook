@@ -59,6 +59,13 @@
     @include media-query('md', 'up') {
       display: flex;
       gap: 1rem;
+
+      &:hover {
+        [class*='navMenuItem']:not([class*='isHover']) {
+          opacity: 0.64;
+          transition: color 0.32s ease-in-out, opacity 0.32s ease-in-out;
+        }
+      }
     }
   }
 
@@ -75,15 +82,10 @@
 
         overflow-x: hidden;
         overflow-y: scroll;
-        height: 100vh;
         scrollbar-width: none;
 
         &::-webkit-scrollbar {
           display: none;
-        }
-
-        .isPricing {
-          margin-bottom: 25rem;
         }
 
         .ctasWrapper {
