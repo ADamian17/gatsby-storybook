@@ -3,10 +3,22 @@
 .navMenuItem {
   color: #333;
   text-decoration: none;
-  position: relative;
 
   .labelContainer {
     line-height: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .label {
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+  }
+
+  .submenu {
+    list-style: none;
   }
 
   .navSubmenuWrapper {
