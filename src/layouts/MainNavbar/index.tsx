@@ -11,10 +11,10 @@ import CtasWrapper from './CtasWrapper';
 import styles from './MainNavbar.module.scss';
 
 type MainNavbarType = {
-  backgroundColor?: "blue" | "blueDim";
   isHomePage?: boolean
-  isTransparent?: boolean;
   noSticky?: boolean;
+  variant?: "full-menu" | "cta-only"
+  withSmartDisplay?: "on" | "off"
 }
 
 const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {

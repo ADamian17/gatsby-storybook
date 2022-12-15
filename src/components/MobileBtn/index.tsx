@@ -16,9 +16,14 @@ const MobileBtn: React.FC<MobileBtnType> = ({ className }) => {
     setShowNav(!showNav)
   }
   return (
-    <button className={`${styles.mobBtn} ${className}`} onClick={handleClick}>
+    <button className={`${styles.mobBtn} ${showNav && styles.isClose} ${className}`} onClick={handleClick}>
       <SvgDefs fileName="defs" svg={svg} />
     </button>
+    //    <button className={`${styles.mobBtn} ${showNav && styles.isClose} ${className}`} onClick={handleClick}>
+    //    <div className={`${styles.bar} ${styles.barOne}`}></div>
+    //    <div className={`${styles.bar} ${styles.barTwo}`}></div>
+    //    <div className={`${styles.bar} ${styles.barThree}`}></div>
+    //  </button>
   )
 }
 

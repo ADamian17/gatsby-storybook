@@ -12,8 +12,8 @@ type CtasWrapperType = {
 const CtasWrapper: React.FC<CtasWrapperType> = ({ isMobile, className, withCta }) => {
   const ctas = isMobile ? (
     <div className={`${styles.ctasContainer} ${className}`}>
-      <a href={"/#"} className={styles.cta}>Sign in</a>
-      <a href={"/#"} className={styles.cta}>Try it free</a>
+      <a href={"/#"} className={`${styles.cta} ${styles.signIn}`}>Sign in</a>
+      <a href={"/#"} className={`${styles.cta}`}>Try it free</a>
     </div>
   ) : (
     <>

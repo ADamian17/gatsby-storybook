@@ -1,12 +1,49 @@
 .mobBtn {
   background-color: transparent;
   border: none;
-  height: 3rem;
+  height: 2.2rem;
   width: 3.3rem;
+
+  &::before,
+  &::after {
+    content: '';
+    height: 3.67px;
+    background-color: #333;
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    transition: all 0.5s;
+    transform-origin: center;
+    border-radius: 100px;
+    width: 24.17px;
+  }
 
   svg {
     fill: #333;
     height: 100%;
     width: 100%;
+  }
+
+  &.isClose {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+
+    svg {
+      display: none;
+    }
   }
 }

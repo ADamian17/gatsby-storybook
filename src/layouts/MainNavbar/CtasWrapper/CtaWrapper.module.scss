@@ -1,7 +1,26 @@
 .ctasContainer {
-  background-color: red;
+  gap: 16px;
 
   .cta {
-    background-color: #1371c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    height: 48px;
+    background-color: #ff7a5c;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 48px;
+    text-decoration: none;
+
+    &.signIn {
+      background-color: #fff;
+      border: 1px solid #ff7a5c;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      color: #ff7a5c;
+    }
   }
 }
