@@ -1,10 +1,14 @@
-name: Build Static Storybook
+name: Publish stories if changed
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+    paths: ["src/components/**"]
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+    paths: ["src/components/**"]  
 
 jobs:
   build:
@@ -12,14 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install and Build
-        run: npm install
-      - name: Build Storybook Static
-        run: npm run build-storybook
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        run: |
+          npm install
+          npm run build-storybook
+      - name: Deploy storybook to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          source-directory: "storybook-static"
-          destination-github-username: "ADamian17"
-          destination-repository-name: 'demo-dir-1'
+          folder: storybook-static
+          ssh-key: ${{ secrets.DEPLOY_KEY }}

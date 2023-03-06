@@ -1,86 +1,153 @@
 @use "main" as *;
 
-.navMenuItem {
-  color: #333;
-  text-decoration: none;
-
-  .labelContainer {
-    line-height: normal;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .label {
-      font-weight: 500;
-      font-size: 2rem;
-      line-height: 2.4rem;
-    }
-  }
-
+.menuItem {
   .submenu {
-    list-style: none;
-  }
-
-  .navSubmenuWrapper {
+    background-color: #1371c8;
     display: none;
-    background-color: transparent;
-    border-radius: 4px;
-    position: relative;
-    top: 100%;
-    width: 100%;
+    height: 20vh;
     left: 0;
+    position: absolute;
+    top: 72px;
+    width: 100%;
+  }
 
-    @include media-query('md', 'up') {
-      background-color: #fff;
-      border-radius: 0;
-      box-shadow: 0 16px 24px rgba(#333, 0.08);
-      position: fixed;
-      top: 72px;
+  &:hover {
+    position: unset;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 4rem;
       left: 0;
-    }
-  }
-
-  .navSubmenuItem {
-    margin: auto;
-  }
-
-  &.isPricing {
-    margin-bottom: 25rem;
-  }
-
-  @include media-query('md', 'up') {
-    &.isPricing {
-      margin-bottom: 0;
+      margin-left: -15rem;
+      position: absolute;
+      top: 3rem;
+      width: calc(100% + 30rem);
+      z-index: 0;
     }
 
-    &.isHover {
-      &:hover {
-        .labelContainer {
-          color: #1371c8;
-        }
-
-        &::before {
-          content: '';
-          display: block;
-          height: 4rem;
-          left: 0;
-          margin-left: -15rem;
-          position: absolute;
-          top: 3rem;
-          width: calc(100% + 30rem);
-          z-index: 0;
-        }
-
-        .navSubmenuWrapper {
-          animation: fadeInLarge 0.32s ease-in-out;
-          border-bottom: 1px solid #f2f2f2;
-          border-top: 1px solid #f2f2f2;
-          display: grid;
-        }
-      }
+    .submenu {
+      animation: fadeInLarge 0.32s ease-in-out;
+      border-bottom: 1px solid $grey--weak;
+      border-top: 1px solid $grey--weak;
+      display: inline;
+      z-index: 5;
     }
   }
 }
+
+// .menuItem {
+// &::before {
+//   background-color: $blue--border;
+//   text-align: center;
+//   content: 'here';
+//   display: block;
+//   height: 4rem;
+//   left: 0;
+//   margin-left: -15rem;
+//   position: absolute;
+//   top: 3rem;
+//   width: 100%;
+//   width: calc(100% + 30rem);
+//   z-index: 0;
+// }
+
+//   @include media-query('md', 'up') {
+//     position: unset;
+
+//     .submenuWrapper {
+//       border: 1px solid red;
+//       animation: fadeInLarge 0.32s ease-in-out;
+//       border-bottom: 1px solid $grey--weak;
+//       border-top: 1px solid $grey--weak;
+//     }
+//   }
+// }
+
+// .navMenuItem {
+//   color: #333;
+//   text-decoration: none;
+
+//   &::before {
+//     content: 'here';
+//     text-align: center;
+//     background-color: #1370c824;
+//     display: block;
+//     height: 4rem;
+//     left: 0;
+//     margin-left: -15rem;
+//     position: absolute;
+//     top: 3rem;
+//     width: calc(100% + 30rem);
+//     z-index: 0;
+//   }
+
+//   .labelContainer {
+//     line-height: normal;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     .label {
+//       font-weight: 500;
+//       font-size: 2rem;
+//       line-height: 2.4rem;
+//     }
+//   }
+
+//   .submenu {
+//     list-style: none;
+//   }
+
+//   .navSubmenuWrapper {
+//     display: none;
+//     background-color: transparent;
+//     border-radius: 4px;
+//     position: relative;
+//     top: 100%;
+//     width: 100%;
+//     left: 0;
+
+//     @include media-query('md', 'up') {
+//       background-color: #fff;
+//       border-radius: 0;
+//       box-shadow: 0 16px 24px rgba(#333, 0.08);
+//       position: fixed;
+//       top: 72px;
+//       left: 0;
+//     }
+//   }
+
+//   .navSubmenuItem {
+//     margin: auto;
+//   }
+
+//   &.isPricing {
+//     margin-bottom: 25rem;
+//   }
+
+//   @include media-query('md', 'up') {
+//     &.isPricing {
+//       margin-bottom: 0;
+//     }
+
+//     &.isHover {
+//       &:hover {
+//         .labelContainer {
+//           color: #1371c8;
+//         }
+
+//         .navSubmenuWrapper {
+//           animation: fadeInLarge 0.32s ease-in-out;
+//           border-bottom: 1px solid #f2f2f2;
+//           border-top: 1px solid #f2f2f2;
+//           display: grid;
+//           z-index: 10;
+//         }
+//       }
+//     }
+//   }
+// }
 
 @keyframes fadeInLarge {
   0% {

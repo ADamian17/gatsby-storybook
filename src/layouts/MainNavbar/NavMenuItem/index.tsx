@@ -34,41 +34,13 @@ export const NavMenuItem: React.FC<NavMenuItemType> = ({
   const menuArrow = withMenu && <MenuArrow expand={expand} />
 
   return (
-    <Link
-      to="/#"
-      className={navMenuItemStyles}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleHover}
-    >
-      <div className={styles.labelContainer} onClick={handleClick}>
-        <p className={styles.label}>{label}</p>
-        {menuArrow}
-      </div>
+    <li className={styles.menuItem}>
+      <span>{label}</span>
 
-      {
-        withMenu && expand && (
-          <menu className={`${styles.submenu}`}>
-            <li>items-1</li>
-            <li>items-2</li>
-            <li>items-3</li>
-            <li>items-4</li>
-            <li>items-5</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-            <li>items-6</li>
-          </menu>
-        )
-      }
-    </Link>
+      <menu className={styles.submenu}>
+        <li>{label} Submenu</li>
+      </menu>
+    </li>
   )
 }
 

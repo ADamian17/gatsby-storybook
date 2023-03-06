@@ -1,5 +1,9 @@
+import dotenv from 'dotenv';
 import type { GatsbyConfig } from 'gatsby';
 import path from 'path';
+
+dotenv.config();
+console.log(process.env.WP_URL);
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -11,12 +15,12 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    // {
-    //   resolve: 'gatsby-source-wordpress',
-    //   options: {
-    //     url: 'https://spgatsby.local/graphql',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        url: process.env.WP_URL,
+      },
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {

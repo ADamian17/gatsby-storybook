@@ -16,9 +16,11 @@
     "start": "gatsby develop",
     "storybook": "start-storybook -p 6006",
     "test": "jest --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "gatsby": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-sass": "^6.2.0",
@@ -42,6 +44,7 @@
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.10",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/dom": "^8.18.1",
     "@testing-library/jest-dom": "^5.16.5",

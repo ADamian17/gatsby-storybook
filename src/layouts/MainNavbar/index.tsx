@@ -36,7 +36,6 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {
     }
   }, [pageOffsetY, windowWidth])
 
-
   const headerStyles = `${styles.mainNavbar} ${isSticky && styles.isSticky} ${showNav && styles.isOpen}`
   const withCta = !isHomePage && isSticky;
 
@@ -52,10 +51,6 @@ const MainNavbar: React.FC<MainNavbarType> = ({ isHomePage, noSticky }) => {
 
       <nav className={styles.navMenuItems}>
         <NavMenuItem label='Products' withMenu />
-        <NavMenuItem label='Features' withMenu />
-        <NavMenuItem label='Professions' withMenu />
-        <NavMenuItem label='Resources' withMenu />
-        <NavMenuItem label='Pricing' isPricing />
 
         <CtasWrapper
           isMobile={isMobile}
