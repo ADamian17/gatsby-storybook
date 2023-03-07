@@ -17,6 +17,7 @@ const webpackFinal = async (config) => {
       '@layouts': path.resolve(__dirname, 'src/layouts'),
       '@services': path.resolve(__dirname, 'src/services'),
       '@types': path.resolve(__dirname, 'src/types'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
     },
   };
   config.module.rules.push({
