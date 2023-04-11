@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { SpCtxWrapper } from '@contexts';
+import { SpCtxWrapper } from '../contexts';
 import { ActionType } from '@types';
 
 const useDispatch = (): React.Dispatch<ActionType> => {

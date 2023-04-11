@@ -5,7 +5,7 @@ import SvgDefs from '../../components/SvgDefs';
 import MobileBtn from '../../components/MobileBtn';
 import useMobileNavBtnStore from '../../zustand';
 import NavMenuItem from './NavMenuItem';
-import { usePageOffset, useWindowSize } from '@hooks';
+import { usePageOffset, useWindowSize } from '../../hooks';
 import CtasWrapper from './CtasWrapper';
 
 import styles from './MainNavbar.module.scss';
