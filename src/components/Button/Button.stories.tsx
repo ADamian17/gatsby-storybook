@@ -17,9 +17,3 @@ Primary.args = {
   loading: false,
   withArrow: false,
 };
-
-Second.args = {
-  text: 'Second button',
-  loading: false,
-  withArrow: true,
-};
